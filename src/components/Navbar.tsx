@@ -1,23 +1,31 @@
-
 import "../index.css";
-export default function Navbar() {
-    return (
-        <nav className="navbar">
 
-            <div className="logo">
-                interior
-            </div>
+type Props = {
+  search: string;
+  setSearch: (value: string) => void;
+  onBookmarks: () => void;
+  onHome: () => void;
+};
 
-            <ul>
+export default function Navbar({ search, setSearch,onBookmarks,onHome}: Props) {
+  return (
+    <nav className="navbar">
+      <div className="logo">interior</div>
 
-                <li>Home</li>
+      <div className="nav-search">
+        <input
+          type="text"
+          placeholder="Search from saved links..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
 
-                <li><a href="#"></a>Links</li>
-
-                <li>About</li>
-
-            </ul>
-
-        </nav>
-    );
+      <ul>
+       <li onClick={onHome}>Home</li>
+  <li onClick={onBookmarks}>Bookmarks</li>
+  <li>About</li>
+      </ul>
+    </nav>
+  );
 }

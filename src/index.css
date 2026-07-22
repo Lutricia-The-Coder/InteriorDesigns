@@ -6,7 +6,8 @@ font-family:Poppins,sans-serif;
 }
 
 body{
-background:#757474bb;
+background: rgba(15, 15, 15, 0.9 ); 
+
 overflow-x:hidden;
 
 }
@@ -14,7 +15,7 @@ overflow-x:hidden;
 /*Navbar file*/
 
 .navbar{
-position:absolute;
+position:fixed;
 top:0;
 left:0;
 right:0;
@@ -23,13 +24,17 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:20;
-
+background: transparent;
+backdrop-filter:blur(20px);
 }
 .logo{
 
 color:white;
 font-size:28px;
 font-weight:700;
+border : 1px solid #303030;
+border-radius: 500%;
+padding: 1%;
 
 }
 ul{
@@ -50,13 +55,13 @@ color:#d4a55d;
 
 .hero{
 height:100vh;
-background-image:url("../assets/hero.jpg");
+background-image: url();
 background-size:cover;
 background-position:center;
 position:relative;
 }
 .hero::before{
-content:"";
+
 position:absolute;
 inset:0;
 }
@@ -90,4 +95,312 @@ font-size:18px;
 border-radius:8px;
 cursor:pointer;
 transition:.3s;
+}
+.overlay button:hover{
+
+transform:scale(1.05);
+
+}
+.modal{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+
+}
+
+.glass{
+width:500px;
+border-radius:20px;
+display:flex;
+flex-direction:column;
+gap:20px;
+color:white;
+background: transparent;
+backdrop-filter: blur(35px);
+padding: 4%;
+
+}
+
+.glass input,
+.glass textarea{
+
+padding:15px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+.glass textarea{
+
+height:120px;
+resize:none;
+
+}
+
+.buttons{
+
+display:flex;
+gap:20px;
+
+}
+
+.buttons button{
+
+flex:1;
+
+padding:14px;
+
+cursor:pointer;
+
+background:#b58a4a;
+
+border:none;
+
+color:white;
+
+font-size:16px;
+
+border-radius:8px;
+
+}
+.card{
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:30px;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+}
+
+.card a{
+
+color:#d6ab67;
+
+display:block;
+
+margin-bottom:18px;
+
+text-decoration:none;
+
+word-break:break-all;
+
+}
+
+.card p{
+
+color:#bdbdbd;
+
+line-height:1.6;
+
+min-height:60px;
+
+}
+
+.tags{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:20px;
+
+}
+
+.tags span{
+
+padding:6px 14px;
+
+background:#b58a4a;
+
+border-radius:40px;
+
+font-size:13px;
+
+}
+
+.actions{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+.actions button{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:50%;
+
+cursor:pointer;
+
+background:#303030;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.actions button:hover{
+
+background:#b58a4a;
+
+}
+
+.tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-top:20px;
+
+}
+
+.tags span{
+
+background:#b58a4a;
+
+padding:5px 12px;
+
+border-radius:50px;
+
+}
+
+.actions{
+margin-top:25px;
+display:flex;
+gap:20px;
+font-size:22px;
+cursor:pointer;
+}
+
+.list {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.empty{
+
+height:300px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#996a6a;
+color:white;
+
+}
+.search-section{
+    background:#af5a5a;
+    padding:40px 80px 20px;
+}
+
+.search-section input{
+
+    width:100%;
+    padding:18px 20px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+    background:#252525;
+    color:white;
+
+}
+
+.bookmarks-modal {
+    width: 90%;
+    max-width: 1100px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.close-btn {
+    background: #b58a4a;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+/*responsiveness*/
+@media(max-width:768px){
+
+.overlay h1{
+
+font-size:38px;
+
+}
+
+.overlay p{
+
+font-size:18px;
+
+}
+
+.navbar{
+
+padding:25px;
+
+}
+
+ul{
+
+display:none;
+
+}
+
 }

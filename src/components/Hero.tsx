@@ -1,19 +1,27 @@
 
 import Navbar from "./Navbar";
-import hero from "../assets/hero.png"
 import "../index.css";
 
 type Props = {
-    onAdd: () => void;
+  onAdd: () => void;
+  search: string;
+  setSearch: (value: string) => void;
+  onBookmarks: () => void;
+  onHome: () => void;
 };
 
-export default function Hero({ onAdd }: Props) {
 
+export default function Hero({ onAdd,search,setSearch,onBookmarks,onHome}: Props) {
     return (
 
-        <section className="hero"  style={{ backgroundImage: `url(${hero})` }}>
+        <section className="hero" >
 
-            <Navbar />
+            <Navbar
+  search={search}
+  setSearch={setSearch}
+  onBookmarks={onBookmarks}
+  onHome={onHome}
+/>
 
             <div className="overlay">
 
