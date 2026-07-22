@@ -60,7 +60,7 @@ export default function LinkForm({
       <form className="glass" onSubmit={submit}>
 
         <h2>
-          {editing ? "Edit Bookmark" : "Add Bookmark"}
+          {editing ? "Edit Link" : "Add Link"}
         </h2>
 
         <input

@@ -2,6 +2,7 @@
 import Navbar from "./Navbar";
 import "../index.css";
 
+
 type Props = {
   onAdd: () => void;
   search: string;
@@ -14,7 +15,7 @@ type Props = {
 export default function Hero({ onAdd,search,setSearch,onBookmarks,onHome}: Props) {
     return (
 
-        <section className="hero" >
+        <section className="hero">
 
             <Navbar
   search={search}
@@ -26,7 +27,7 @@ export default function Hero({ onAdd,search,setSearch,onBookmarks,onHome}: Props
             <div className="overlay">
 
                 <h1>
-                    Save Your Favorite Links
+                    Save Your Favorite Links/Website
                 </h1>
   
                 <p>
@@ -34,7 +35,7 @@ export default function Hero({ onAdd,search,setSearch,onBookmarks,onHome}: Props
                     </p>
 
                 <button onClick={onAdd}>
-                    Add Link
+                    Add Link/Bookmark
                 </button>
 
             </div>

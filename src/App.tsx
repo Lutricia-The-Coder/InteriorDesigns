@@ -10,15 +10,12 @@ import "./index.css";
 
 function App() {
   const [links, setLinks] = useLocalStorage<LinkItem[]>("links", []);
-const [page, setPage] = useState<"home" | "bookmarks">("home");
   const [editing, setEditing] = useState<LinkItem | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
   const [showBookmarks, setShowBookmarks] = useState(false);
 
 const saveLink = (link: LinkItem) => {
-  console.log("saveLink called");
-  console.log(link);
 
   const duplicate = links.find(
     (item) =>
@@ -38,6 +35,8 @@ const saveLink = (link: LinkItem) => {
       )
     );
     setEditing(null);
+
+      setShowBookmarks(true);
   } else {
     setLinks([link, ...links]);
   }
@@ -51,6 +50,7 @@ const saveLink = (link: LinkItem) => {
   };
 
   const editLink = (link: LinkItem) => {
+    setShowBookmarks(false);
     setEditing(link);
     setShowForm(true);
   };
@@ -65,7 +65,8 @@ const saveLink = (link: LinkItem) => {
       item.tags.join(" ").toLowerCase().includes(query)
     );
   }, [links, search]);
-
+console.log("Search:", search);
+console.log("Filtered:", filteredLinks);
   return (
     <>
       <Hero
@@ -75,6 +76,16 @@ const saveLink = (link: LinkItem) => {
   onBookmarks={() => setShowBookmarks(true)}
   onHome={() => setShowBookmarks(false)}
 />
+  {showForm && (
+      <LinkForm
+        onSave={saveLink}
+        editing={editing}
+        close={() => {
+          setEditing(null);
+          setShowForm(false);
+        }}
+      />
+    )}
 
    {showBookmarks && (
   <div className="modal">
@@ -90,11 +101,18 @@ const saveLink = (link: LinkItem) => {
           X
         </button>
       </div>
-
+  <input
+        className="bookmark-search"
+        type="text"
+        placeholder="Search bookmarks..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
       <LinkList
         links={filteredLinks}
         onDelete={deleteLink}
         onEdit={editLink}
+         search={search}
       />
 
     </div>

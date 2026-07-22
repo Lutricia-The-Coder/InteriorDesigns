@@ -1,25 +1,35 @@
 import type { LinkItem } from "../types";
 import LinkCard from "./LinkCard";
 import "../index.css";
+
+
 type Props = {
   links: LinkItem[];
   onDelete: (id: string) => void;
   onEdit: (link: LinkItem) => void;
+  search:string;
 };
 
 export default function LinkList({
   links,
   onDelete,
   onEdit,
+  search,
 }: Props) {
   if (links.length === 0)
     return (
       <div className="empty">
 
-        <h1>No Saved Links Yet</h1>
+       <h1>
+          {search
+            ? "No bookmarks found "
+            : "No Bookmarks Yet "}
+        </h1>
 
         <p>
-          Click "Add Link" to save your first link.
+          {search
+            ? `No bookmarks match "${search}".`
+            : 'Click "Add Bookmark" to save your first website.'}
         </p>
 
       </div>
