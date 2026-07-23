@@ -5,6 +5,7 @@ import LinkList from "./components/LinkList";
 import useLocalStorage from "./hooks/useLocalStorage";
 import type { LinkItem } from "./types";
 import "./index.css";
+import Confirmation from "./components/Confirmation";
 
 function App() {
   
@@ -12,9 +13,26 @@ function App() {
   const [editing, setEditing] = useState<LinkItem | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
+ 
+  //adding confirmation to the buttons
+  const [confirmation, setConfirmation] = useState<{
+  message: string;
+  type: "success" | "error";
+} | null>(null);
+
+const showConfirmation = (
+  message: string,
+  type: "success" | "error"
+) => {
+  setConfirmation({ message, type });
+
+  setTimeout(() => {
+    setConfirmation(null);
+  }, 3000);
+};
 
   const saveLink = (link: LinkItem) => {
-   
+   showConfirmation("Bookmark saved successfully!", "success");
     const duplicate = links.find(
       (item) =>
         item.url.toLowerCase() === link.url.toLowerCase() &&
@@ -22,11 +40,12 @@ function App() {
     );
 
     if (duplicate) {
-      alert("This URL already exists.");
+     showConfirmation("Bookmark already exists.", "error");
       return;
     }
 
     if (editing) {
+      showConfirmation("Bookmark updated successfully!", "success");
       setLinks(
         links.map((item) =>
           item.id === editing.id ? link : item
@@ -43,6 +62,7 @@ function App() {
   const deleteLink = (id: string) => {
     if (window.confirm("Delete bookmark?")) {
       setLinks(links.filter((item) => item.id !== id));
+      showConfirmation("Bookmark deleted.", "success");
     }
   };
 
@@ -88,6 +108,13 @@ function App() {
           }}
         />
       )}
+
+      {confirmation && (
+  <Confirmation
+    message={confirmation.message}
+    type={confirmation.type}
+  />
+)}
     </>
   );
 }

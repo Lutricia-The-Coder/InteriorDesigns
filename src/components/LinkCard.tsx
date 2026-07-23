@@ -20,7 +20,7 @@ export default function LinkCard({
 }: Props) {
   return (
     <div className="card">
-
+       <p>Title</p>
       <h2>{link.title}</h2>
 
       <a
@@ -30,9 +30,10 @@ export default function LinkCard({
       >
         {link.url}
       </a>
-
+      <p>Description</p>
       <p>{link.description}</p>
 
+       <p>Tag</p>
       <div className="tags">
         {link.tags.map((tag) => (
           <span key={tag}>{tag}</span>

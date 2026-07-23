@@ -57,52 +57,56 @@ export default function LinkForm({
   return (
     <div className="modal">
 
-      <form className="glass" onSubmit={submit}>
+     <form className="glass" onSubmit={submit}>
+  <h2>{editing ? "Edit Bookmark" : "Add Bookmark"}</h2>
 
-        <h2>
-          {editing ? "Edit Link" : "Add Link"}
-        </h2>
+  <label htmlFor="title">Title</label>
+  <input
+    id="title"
+    type="text"
+    placeholder="e.g. YouTube"
+    value={title}
+    onChange={(e) => setTitle(e.target.value)}
+    required
+  />
 
-        <input
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+  <label htmlFor="url">Website URL</label>
+  <input
+    id="url"
+    type="url"
+    placeholder="https://example.com"
+    value={url}
+    onChange={(e) => setUrl(e.target.value)}
+    required
+  />
 
-        <input
-          placeholder="URL"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
+  <label htmlFor="description">Description</label>
+  <textarea
+    id="description"
+    placeholder="Brief description of the website..."
+    value={description}
+    onChange={(e) => setDescription(e.target.value)}
+  />
 
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+  <label htmlFor="tags">Tag(s)</label>
+  <input
+    id="tags"
+    type="text"
+    placeholder="design, inspiration, portfolio"
+    value={tags}
+    onChange={(e) => setTags(e.target.value)}
+  />
 
-        <input
-          placeholder="Tags (comma separated)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-        />
+  <div className="buttons">
+    <button type="submit">
+      {editing ? "Update Bookmark" : "Save Bookmark"}
+    </button>
 
-        <div className="buttons">
-
-          <button type="submit">
-            Save
-          </button>
-
-          <button
-            type="button"
-            onClick={close}
-          >
-            Cancel
-          </button>
-
-        </div>
-
-      </form>
+    <button type="button" onClick={close}>
+      Cancel
+    </button>
+  </div>
+</form>
 
     </div>
   );
