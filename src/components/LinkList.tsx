@@ -21,13 +21,13 @@ export default function LinkList({
       <div className="empty">
 
        <h1>
-          {search
+          {search.trim()
             ? "No bookmarks found "
             : "No Bookmarks Yet "}
         </h1>
 
           <p>
-        {search
+        {search.trim()
           ? "Try another search."
           : 'Click "Add Bookmark" to save your first website.'}
       </p>

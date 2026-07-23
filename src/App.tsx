@@ -7,12 +7,14 @@ import type { LinkItem } from "./types";
 import "./index.css";
 
 function App() {
+  
   const [links, setLinks] = useLocalStorage<LinkItem[]>("links", []);
   const [editing, setEditing] = useState<LinkItem | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
 
   const saveLink = (link: LinkItem) => {
+   
     const duplicate = links.find(
       (item) =>
         item.url.toLowerCase() === link.url.toLowerCase() &&
@@ -66,7 +68,7 @@ function App() {
         onAdd={() => setShowForm(true)}
         search={search}
         setSearch={setSearch}
-        hasBookmarks={links.length > 0}
+        
       >
         <LinkList
           links={filteredLinks}
