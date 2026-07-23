@@ -13,7 +13,7 @@ type Props = {
   onEdit: (link: LinkItem) => void;
 };
 
-export default function Footer({
+export default function LinkCard({
   link,
   onDelete,
   onEdit,
@@ -40,7 +40,6 @@ export default function Footer({
       </div>
 
       <div className="actions">
-
         <button onClick={() => onEdit(link)}>
           <FaEdit />
         </button>
@@ -48,7 +47,7 @@ export default function Footer({
         <button
           onClick={() => window.open(link.url)}
         >
-          <FaExternalLinkAlt />
+          <FaExternalLinkAlt /> 
         </button>
 
         <button
@@ -56,7 +55,6 @@ export default function Footer({
         >
           <FaTrash />
         </button>
-
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export default function Hero({ onAdd,search,setSearch,onBookmarks,onHome}: Props
             <div className="overlay">
 
                 <h1>
-                    Save Your Favorite Links/Website
+                    Save our Favorite Websites
                 </h1>
   
                 <p>
@@ -35,7 +35,7 @@ export default function Hero({ onAdd,search,setSearch,onBookmarks,onHome}: Props
                     </p>
 
                 <button onClick={onAdd}>
-                    Add Link/Bookmark
+                    Add Bookmark
                 </button>
 
             </div>

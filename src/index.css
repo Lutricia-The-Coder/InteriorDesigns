@@ -425,7 +425,7 @@ padding:20px;
 }
 }
 /*tablet*/
-@media (max-width:900px){
+@media (max-width:1024px){
 .navbar{
     padding:20px;
 }
@@ -436,6 +436,8 @@ padding:20px;
     font-size:48px;
 }
 }
+
+/*desktop*/
 @media (max-width:1200px){
     
 .overlay h1{
