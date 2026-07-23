@@ -26,11 +26,11 @@ export default function LinkList({
             : "No Bookmarks Yet "}
         </h1>
 
-        <p>
-          {search
-            ? `No bookmarks match "${search}".`
-            : 'Click "Add Bookmark" to save your first website.'}
-        </p>
+          <p>
+        {search
+          ? "Try another search."
+          : 'Click "Add Bookmark" to save your first website.'}
+      </p>
 
       </div>
     );

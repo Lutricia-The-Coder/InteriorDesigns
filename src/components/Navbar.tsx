@@ -3,22 +3,30 @@ import "../index.css";
 type Props = {
   search: string;
   setSearch: (value: string) => void;
-  onBookmarks: () => void;
-  onHome: () => void;
 };
 
-export default function Navbar({ search, setSearch,onBookmarks,onHome}: Props) {
+export default function Navbar({
+  search,
+  setSearch,
+}: Props) {
   return (
     <nav className="navbar">
-      <div className="logo">interior</div>
 
-      
+      <h2 className="logo">
+        interior
+      </h2>
 
-      <ul>
-     
-  <li onClick={onBookmarks}>Bookmarks</li>
+      <div className="search">
 
-      </ul>
+        <input
+          type="text"
+          placeholder="Search bookmarks..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+      </div>
+
     </nav>
   );
 }
