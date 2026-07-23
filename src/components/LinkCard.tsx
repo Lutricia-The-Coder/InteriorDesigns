@@ -19,26 +19,24 @@ export default function LinkCard({
   onEdit,
 }: Props) {
   return (
-    <div className="card">
-       <p>Title</p>
-      <h2>{link.title}</h2>
+<div className="card">
+  <label>Title</label>
+  <h2>{link.title}</h2>
 
-      <a
-        href={link.url}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {link.url}
-      </a>
-      <p>Description</p>
-      <p>{link.description}</p>
+  <label>Website URL</label>
+  <a href={link.url} target="_blank" rel="noreferrer">
+    {link.url}
+  </a>
 
-       <p>Tag</p>
-      <div className="tags">
-        {link.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </div>
+  <label>Description</label>
+  <p>{link.description}</p>
+
+  <label>Tags</label>
+  <div className="tags">
+    {link.tags.map((tag) => (
+      <span key={tag}>{tag}</span>
+    ))}
+  </div>
 
       <div className="actions">
         <button onClick={() => onEdit(link)}>

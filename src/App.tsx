@@ -6,6 +6,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import type { LinkItem } from "./types";
 import "./index.css";
 import Confirmation from "./components/Confirmation";
+import ButtonConfirm from "./components/ButtonConfirm";
 
 function App() {
   
@@ -13,7 +14,7 @@ function App() {
   const [editing, setEditing] = useState<LinkItem | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
- 
+ const [deleteId, setDeleteId] = useState<string | null>(null);
   //adding confirmation to the buttons
   const [confirmation, setConfirmation] = useState<{
   message: string;
@@ -32,40 +33,51 @@ const showConfirmation = (
 };
 
   const saveLink = (link: LinkItem) => {
-   showConfirmation("Bookmark saved successfully!", "success");
-    const duplicate = links.find(
-      (item) =>
-        item.url.toLowerCase() === link.url.toLowerCase() &&
-        item.id !== link.id
+  const duplicate = links.find(
+    (item) =>
+      item.url.toLowerCase() === link.url.toLowerCase() &&
+      item.id !== link.id
+  );
+
+  if (duplicate) {
+    showConfirmation("Bookmark already exists.", "error");
+    return;
+  }
+
+  if (editing) {
+    setLinks(
+      links.map((item) =>
+        item.id === editing.id ? link : item
+      )
     );
 
-    if (duplicate) {
-     showConfirmation("Bookmark already exists.", "error");
-      return;
-    }
+    setEditing(null);
+    showConfirmation("Bookmark updated successfully!", "success");
+  } else {
+    setLinks([link, ...links]);
+    showConfirmation("Bookmark saved successfully!", "success");
+  }
 
-    if (editing) {
-      showConfirmation("Bookmark updated successfully!", "success");
-      setLinks(
-        links.map((item) =>
-          item.id === editing.id ? link : item
-        )
-      );
-      setEditing(null);
-    } else {
-      setLinks([link, ...links]);
-    }
-
-    setShowForm(false);
-  };
+  setShowForm(false);
+};
 
   const deleteLink = (id: string) => {
-    if (window.confirm("Delete bookmark?")) {
-      setLinks(links.filter((item) => item.id !== id));
-      showConfirmation("Bookmark deleted.", "success");
-    }
+    setDeleteId(id);
   };
+const confirmDelete = () => {
+  if (!deleteId) return;
 
+  setLinks(
+    links.filter((item) => item.id !== deleteId)
+  );
+
+  showConfirmation(
+    "Bookmark deleted successfully!",
+    "success"
+  );
+
+  setDeleteId(null);
+};
   const editLink = (link: LinkItem) => {
     setEditing(link);
     setShowForm(true);
@@ -108,7 +120,14 @@ const showConfirmation = (
           }}
         />
       )}
-
+{deleteId && (
+  <ButtonConfirm
+    title="Delete Bookmark"
+    message="Are you sure you want to delete this bookmark? This action cannot be undone."
+    onConfirm={confirmDelete}
+    onCancel={() => setDeleteId(null)}
+  />
+)}
       {confirmation && (
   <Confirmation
     message={confirmation.message}

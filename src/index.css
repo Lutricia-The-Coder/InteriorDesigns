@@ -25,10 +25,8 @@ align-items:center;
   background:white;
 
     border:1px solid #E8E8E8;
-
-    border-radius:14px;
- padding:18px 30px;
-margin:20px;
+max-width:1300px;
+margin:20px auto;
 }
 .logo{
 
@@ -82,31 +80,19 @@ padding: 1%;
 .hero-links{
 
     width:100%;
-
-    margin-top:40px;
+ max-width:1300px;
 
 }
 .overlay{
-
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
-
-    min-height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:120px 80px 50px;
-    
-
+  position:relative;
+  z-index:2;
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:100px 30px 30px;
 }
 .overlay h1{
 font-size:64px;
@@ -161,135 +147,119 @@ transform:scale(1.05);
     margin-top:15px;
 }
 .modal{
-position:fixed;
-inset:0;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:999;
-
-
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+  backdrop-filter: blur(6px);
+  padding: 16px;
+  overflow-y: auto;
 }
 
 .glass{
-width:500px;
-border-radius:20px;
-display:flex;
-flex-direction:column;
-gap:20px;
-color:white;
-   background:#171717;
-
-    border:1px solid #2E2E2E;
-padding: 4%;
-
+  width:100%;
+  max-width: 420px;
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  background:#171717;
+  padding: 20px;
+  max-height: 86vh;
+  overflow-y: auto;
 }
 
 .glass input,
 .glass textarea{
-   width:100%;
-    padding:14px 16px;
-    border:1px solid #E5E5E5;
-    border-radius:10px;
-    background:#F7F7F7;
-    color:#111;
-outline:none;
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #E5E5E5;
+  border-radius:10px;
+  background:#F7F7F7;
+  color:#111;
+  outline:none;
 }
 .glass input::placeholder,
 .glass textarea::placeholder{
-
-      color:#7B7B7B;
-
-
+  color:#7B7B7B;
 }
 .glass textarea{
-height:120px;
-resize:none;
-
+  height:100px;
+  resize:none;
 }
 .glass label{
-    font-size:14px;
-    font-weight:500;
-    color:#444;
-    margin-bottom:-10px;
+  display:block;
+  font-size:14px;
+  font-weight:600;
+  color:#EEE;
+  margin-bottom:4px;
 }
 .glass input:focus,
 .glass textarea:focus{
-    outline:none;
-    border-color:#111;
-    background:white;
+  outline:none;
+  border-color:#111;
+  background:white;
 }
-
 .glass h2{
-    margin-bottom:10px;
-    color:#111;
+  margin-bottom:6px;
+  color:#fff;
 }
 .buttons{
-
-display:flex;
-gap:20px;
-
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
 .buttons button{
-
-    background:#D8D8D8;
-
-    border:none;
-
-
+  background:#D8D8D8;
+  border:none;
+  padding:12px 16px;
 }
 .card{
- background:white;
-
+    background:#fff;
     border:1px solid #E8E8E8;
+    border-radius:16px;
 
-    border-radius:18px;
+    padding:24px;
 
-    color:#111;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 
-    transition:.3s;
-
+    transition:.25s;
 }
 
 .card:hover{
-transform:translateY(-5px);
- box-shadow:0 15px 35px rgba(0,0,0,.08);
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+}
+
+.card label{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#8A8A8A;
+    font-weight:600;
 }
 
 .card h2{
-
-margin-bottom:15px;
-color:#B4B4B4;
-;
-
+    font-size:24px;
+    color:#111;
+    margin:0;
 }
 
-.card a{
 
-color:#CFCFCF;
-
-display:block;
-
-margin-bottom:18px;
-
-text-decoration:none;
-
-word-break:break-all;
-
-}
-
+.card a,
 .card p{
-
-  color:#666;
-
-line-height:1.6;
-
-min-height:60px;
-
+    color:#555;
+    font-size:16px;
+    line-height:1.6;
+    text-decoration:none;
+    word-break:break-word;
+    margin:0;
 }
-
-
 .actions{
 margin-top:25px;
 display:flex;
@@ -365,15 +335,11 @@ border-radius:50px;
     gap:20px;
 
     width:100%;
-
-    background:transparent;
-
-    padding:0;
-
+align-items:start; 
 }
 
 .empty{
-
+min-height:420px;
     display:flex;
 
     flex-direction:column;
@@ -382,13 +348,9 @@ border-radius:50px;
 
     align-items:center;
 
-    padding:80px;
-
     background:white;
-
+border-radius:18px;
     border:1px dashed #DDD;
-
-    color:#111;
 
 
 }
@@ -396,14 +358,14 @@ border-radius:50px;
 .dashboard-header{
 
     width:100%;
-
+ max-width:1300px;
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 
 }
 .dashboard-header h1{
@@ -412,6 +374,9 @@ border-radius:50px;
 
     font-size:40px;
 
+}
+.dashboard-header button{
+    padding:14px 24px;
 }
 .close-btn {
     background: #b58a4a;
@@ -424,6 +389,112 @@ border-radius:50px;
     font-size: 18px;
 }
 /*confirmation button*/
+
+.confirm-box{
+    width:400px;
+    background:white;
+    border:1px solid #E8E8E8;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+}
+
+.confirm-box h3{
+    color:#111;
+    margin-bottom:12px;
+}
+
+.confirm-box p{
+    color:#666;
+    margin-bottom:25px;
+}
+.confirm-modal{
+
+    width:420px;
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E5E5;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+}
+
+.confirm-modal h2{
+
+    color:#111;
+
+    margin-bottom:15px;
+
+}
+
+.confirm-modal p{
+
+    color:#666;
+
+    line-height:1.6;
+
+    margin-bottom:30px;
+
+}
+
+.confirm-modal .buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.confirm-modal button{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+.danger-btn{
+
+    background:#111;
+
+    color:white;
+
+}
+
+.danger-btn:hover{
+
+    background:#333;
+
+}
+.cancel-btn{
+
+    background:#F2F2F2;
+
+    color:#111;
+
+}
+
+.cancel-btn:hover{
+
+    background:#E5E5E5;
+
+}
 .confirmation{
     position:fixed;
     top:100px;
