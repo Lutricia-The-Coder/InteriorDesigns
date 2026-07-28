@@ -110,7 +110,7 @@ export default function LinkForm({
     <button type="button" onClick={close} style={{ background: "none" , color:"red" }}>
       Cancel
     </button>
-    
+
      <button type="submit" style={{ background: "green" , color:"white" }}>
       {editing ? "Update Bookmark" : "Save Bookmark"}
     </button>
