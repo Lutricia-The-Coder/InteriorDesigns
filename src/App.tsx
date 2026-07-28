@@ -15,6 +15,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
  const [deleteId, setDeleteId] = useState<string | null>(null);
+
   //adding confirmation to the buttons
   const [confirmation, setConfirmation] = useState<{
   message: string;
@@ -97,11 +98,10 @@ const confirmDelete = () => {
   return (
 
     <div className="app">
-      <Hero
+      <Hero 
         onAdd={() => setShowForm(true)}
         search={search}
         setSearch={setSearch}
-        
       >
         <LinkList
           links={filteredLinks}
