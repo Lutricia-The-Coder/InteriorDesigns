@@ -32,7 +32,7 @@ export default function Hero({
       className="header-search"
     />
           <button onClick={onAdd}>
-             Add Bookmark
+             Add Bookmark 
           </button>
         </div>
 </div>
