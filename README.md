@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-# Interior Designsr
-=======
+
 #  Interior Designs Bookmark Manager
->>>>>>> 7b2b0d9 (create empty state)
 
 A modern and responsive React application for saving, organizing, and managing your favorite interior design websites, inspiration pages, and resources.
 
-Built with **React**, **TypeScript**, and **CSS**, the application allows users to add, edit, search, and delete bookmarks while automatically storing data in the browser using Local Storage.
+Built with **React**, **TypeScript**, and **CSS**, the application allows users to add, edit, search, and delete bookmarks while automatically storing data in the browser using Local Storage
 
----
 
 ## Features
 
