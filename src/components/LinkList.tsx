@@ -55,7 +55,7 @@ export default function LinkList({
         <LinkCard
           key={link.id}
           link={link}
-          onDelete={onDelete}
+          onDelete={onDelete} 
           onEdit={onEdit}
         />
       ))}
