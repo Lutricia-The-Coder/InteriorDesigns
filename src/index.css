@@ -212,6 +212,8 @@ transform:scale(1.05);
     overflow: hidden;
   
 }
+/* buttons delete , edit , search , save*/
+
 .actions{
 margin-top:25px;
 display:flex;
