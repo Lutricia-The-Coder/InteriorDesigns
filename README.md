@@ -12,10 +12,10 @@ Built with **React**, **TypeScript**, and **CSS**, the application allows users 
 -  Edit existing bookmarks
 -  Delete bookmarks with confirmation modal
 -  Search bookmarks by:
-  - Title
-  - URL
-  - Description
-  - Tags
+     - Title
+     - URL
+     - Description
+    - Tags
 -  Organize bookmarks with tags
 -  Persistent storage using Local Storage
 -  Prevents duplicate bookmarks
@@ -32,6 +32,7 @@ Built with **React**, **TypeScript**, and **CSS**, the application allows users 
 - React Icons
 - Local Storage API
 - Vite
+- Vercel
 
 ##  Responsive Design
 
@@ -66,6 +67,38 @@ All bookmarks are stored locally in your browser using the **Local Storage API**
 
 No backend or database is required.
 
+##  Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/Lutricia-The-Coder/interiordesigns.git
+```
+
+### Navigate into the project
+
+```bash
+cd interiordesigns
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```
+http://localhost:5173
+```
+could be a different port depending on if your other ports are not in use.
 
 ##  Future Improvements
 
@@ -76,4 +109,6 @@ No backend or database is required.
 -  Sorting options
 -  Website favicons
 -  Cloud storage
+-  User authentication
 
+ To check the live site **interior-designs-vcve.vercel.app**
