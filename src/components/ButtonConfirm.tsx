@@ -36,7 +36,6 @@ export default function ButtonConfirm({
           </button>
 
         </div>
-
       </div>
     </div>
   );
