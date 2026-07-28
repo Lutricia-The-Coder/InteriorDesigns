@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function useLocalStorage<T>(
   key: string,
-  initialValue: T
+  initialValue: T 
 ) {
   const [value, setValue] = useState<T>(() => {
     const saved = localStorage.getItem(key);
