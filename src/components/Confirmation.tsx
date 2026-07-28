@@ -6,7 +6,7 @@ type Props = {
 export default function Confirmation({ message, type }: Props) {
   return (
     <div className={`confirmation ${type}`}>
-      {message}
+      {message} 
     </div>
   );
 }
