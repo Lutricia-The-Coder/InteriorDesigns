@@ -52,7 +52,7 @@ const [expanded, setExpanded] = useState(false);
           <FaExternalLinkAlt /> 
         </button>
 
-        <button
+        <button 
           onClick={() => onDelete(link.id)}  style={{ background: "none" , color:"gray" }}
         >
           <FaRegTrashAlt />
