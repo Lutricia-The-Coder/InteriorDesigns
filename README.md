@@ -5,6 +5,19 @@ A modern and responsive React application for saving, organizing, and managing y
 
 Built with **React**, **TypeScript**, and **CSS**, the application allows users to add, edit, search, and delete bookmarks while automatically storing data in the browser using Local Storage
 
+---
+
+## Previews
+
+![Preview 1](src/assets/Preview1.PNG)
+
+![Preview 2](src/assets/Preview2.PNG)
+
+![Preview 3](src/assets/Preview3.PNG)
+
+![Preview 4](src/assets/Preview4.PNG)
+
+---
 
 ## Features
 
