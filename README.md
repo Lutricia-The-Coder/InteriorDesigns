@@ -7,7 +7,7 @@ Built with **React**, **TypeScript**, and **CSS**, the application allows users 
 
 ---
 
-## Previews
+## Preview
 
 ![Preview 1](src/assets/Preview1.PNG)
 
